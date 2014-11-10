@@ -12,10 +12,16 @@
 
     // device APIs are available
     //
-    function onDeviceReady() {
-        // external url
-        var ref = window.open('http://m.findit.fi', '_self' 'location=yes';
-    }
+
+     function onDeviceReady() {
+       var networkState = checkConnection();
+    /* load local files if there is not network connection */
+                  if (networkState == Connection.NONE) {
+                   navigator.notification.alert('This app requires an internet connection');
+                  } else {
+                 window.location="http://m.findit.fi";
+                  }
+     }
 
     </script>
   </head>
