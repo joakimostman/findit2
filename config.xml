@@ -19,6 +19,8 @@
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
+    <access origin="http://m.findit.fi" subdomains="true"/>
+    <access origin="http://m2.findit.fi" subdomains="true"/>
 
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
