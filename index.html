@@ -1,46 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Findit.fi mobile</title>
+    <head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://m.findit.fi https://m2.findit.fi/sv/pub/ https://m2.findit.fi/fi/pub/ https://www2.findit.fi/sv/pub/ https://www2.findit.fi/fi/pub/ 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Findit</title>
+    </head>
+    <body>
+        Verifying connectivity..
+        <a id="bkpLink" style="display:none;" href="http://m.findit.fi/">Findit.fi</a>
 
-    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-    <script type="text/javascript" charset="utf-8">
+        <div class="app">
+            
+            <div id="deviceready" class="blink">
+                <script>
+                   // navigator.splashscreen.show();
+                </script>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/index.js"></script>
 
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available
-    //
-    
-         function checkConnection() {
-           var networkState = navigator.connection.type;
-           var states = {};
-           states[Connection.UNKNOWN]  = 'Unknown connection';
-           states[Connection.ETHERNET] = 'Ethernet connection';
-           states[Connection.WIFI]     = 'WiFi connection';
-           states[Connection.CELL_2G]  = 'Cell 2G connection';
-           states[Connection.CELL_3G]  = 'Cell 3G connection';
-           states[Connection.CELL_4G]  = 'Cell 4G connection';
-           states[Connection.NONE]     = 'No network connection';
-          
-           return networkState;
-          
-       }
-
-     function onDeviceReady() {
-       var networkState = checkConnection();
-    /* load local files if there is not network connection */
-                  if (networkState == Connection.NONE) {
-                   navigator.notification.alert('This app requires an internet connection');
-                  } else {
-                 window.location="http://m.findit.fi";
-                  }
-     }
-
-    </script>
-  </head>
-  <body>
-  			<!-- body -->
-  </body>
+        
+    </body>
 </html>
